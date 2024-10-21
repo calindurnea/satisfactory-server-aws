@@ -104,4 +104,5 @@ systemctl enable auto-shutdown
 systemctl start auto-shutdown
 
 # automated backups to s3 every 5 minutes
-su - ubuntu -c "crontab -u ubuntu -l | { cat; echo \"*/5 * * * * /usr/local/bin/aws s3 sync /home/ubuntu/.config/Epic/FactoryGame/Saved/SaveGames/server s3://$S3_SAVE_BUCKET\"; } | crontab -"
+su - ubuntu -c "crontab -u ubuntu -l | { cat; echo \"*/5 * * * * /usr/local/bin/aws s3 sync /home/ubuntu/.config/Epic/FactoryGame/Saved/SaveGames/server s3://$S3_SAVE_BUCKET/server\"; } | crontab -"
+su - ubuntu -c "crontab -u ubuntu -l | { cat; echo \"*/5 * * * * /usr/local/bin/aws s3 sync /home/ubuntu/.config/Epic/FactoryGame/Saved/SaveGames/blueprints s3://$S3_SAVE_BUCKET/blueprints\"; } | crontab -"
