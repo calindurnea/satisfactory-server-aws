@@ -97,7 +97,7 @@ export class SatisFactoryStack extends Stack {
 
     const server = new ec2.Instance(this, `${prefix}Server`, {
       // 2 vCPU, 8 GB RAM should be enough for most factories
-      instanceType: new ec2.InstanceType("t3.xlarge"), //t3.xlarge (burstable) //c5a.2xlarge //c7i.2xlarge // previous: m7a.2xlarge ($$$)
+      instanceType: new ec2.InstanceType("c5a.2xlarge"), //t3.xlarge (burstable) //c5a.2xlarge //c7i.2xlarge // previous: m7a.2xlarge ($$$)
       creditSpecification: ec2.CpuCredits.STANDARD,
       // get exact ami from parameter exported by canonical
       // https://discourse.ubuntu.com/t/finding-ubuntu-images-with-the-aws-ssm-parameter-store/15507
