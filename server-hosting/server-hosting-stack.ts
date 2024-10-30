@@ -200,7 +200,7 @@ export class SatisFactoryStack extends Stack {
 
       startServerLambda.addToRolePolicy(
         new iam.PolicyStatement({
-          actions: ["ec2:StartInstances"],
+          actions: ["ec2:StartInstances", "ec2:StopInstances"],
           resources: [
             `arn:aws:ec2:*:${Config.account}:instance/${server.instanceId}`,
           ],
